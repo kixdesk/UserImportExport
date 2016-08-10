@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <Name>UserImportExport</Name>
+    <Version>5.0.0</Version>
+    <Framework>5.0.x</Framework>
+    <Vendor>c.a.p.e. IT GmbH</Vendor>
+    <URL>http://www.cape-it.de/</URL>
+    <License>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</License>    
+    <Description  Lang="en">Provides ImportExportBackend for Users.</Description>    
+    <PackageRequired Version="5.0.1">ImportExport</PackageRequired>
+    <BuildDate>?</BuildDate>
+    <BuildHost>?</BuildHost>
+    <Filelist>
+        <File Permission="644" Location="doc/en/UserImportExport.pod"/>
+        <File Permission="644" Location="doc/CHANGES_UserImportExport.md"/>
+        <File Permission="644" Location="Kernel/Config/Files/UserImportExport.xml" />
+        <File Permission="644" Location="Kernel/System/ImportExport/ObjectBackend/User.pm" />
+        <File Permission="644" Location="Kernel/Language/de_UserImportExport.pm" />
+        <File Permission="644" Location="var/packagesetup/UserImportExport.pm" />
+    </Filelist>
+    <DatabaseInstall></DatabaseInstall>
+    <DatabaseReinstall></DatabaseReinstall>
+    <DatabaseUninstall></DatabaseUninstall>
+    <CodeInstall Type="post"><![CDATA[
+    $Kernel::OM->Get('var::packagesetup::UserImportExport')->CodeInstall();
+    ]]>
+    </CodeInstall>
+    <CodeReinstall Type="post"><![CDATA[
+    $Kernel::OM->Get('var::packagesetup::UserImportExport')->CodeReinstall();
+    ]]>
+    </CodeReinstall>
+    <CodeUpgrade Type="post"><![CDATA[
+    $Kernel::OM->Get('var::packagesetup::UserImportExport')->CodeUpgrade();
+    ]]>
+    </CodeUpgrade>
+    <CodeUninstall Type="pre"><![CDATA[
+    $Kernel::OM->Get('var::packagesetup::UserImportExport')->CodeUninstall();
+    ]]>
+    </CodeUninstall>    
+    <IntroInstall Type="pre" Title="Install Information" Lang="en">
+        <![CDATA[
+        <br/>
+        <strong>WELCOME</strong>
+        <br/>
+        <br/>
+        You are about to INSTALL the UserImportExport extensions package for OTRS.<br/>        
+        <br/>
+        <br/>
+        <b>Required OTRS packages:</b><br><br>
+        ImportExport 5.0.1 or higher
+        <br/>
+        <br/>        
+        <br/>        
+        c.a.p.e. IT ...easy.<br/>
+        <br/>
+    ]]></IntroInstall>
+    
+    
+    
+    <IntroUpgrade Type="pre" Title="Upgrade Information" Lang="en">
+        <![CDATA[
+        <br/>
+        <strong>WELCOME</strong>
+        <br/>
+        <br/>
+        You are about to UPGRADE the UserImportExport extensions package for OTRS.<br/>        
+        <br/>
+        <br/>
+        <b>Required OTRS packages:</b><br><br>
+        ImportExport 5.0.1 or higher
+        <br/>
+        <br/>        
+        <br/>        
+        c.a.p.e. IT ...easy.<br/>
+        <br/>
+    ]]></IntroUpgrade>
+    <IntroUninstall Type="pre" Title="Uninstallation Information" Lang="en">
+        <![CDATA[
+        <br/>
+        <strong>WELCOME</strong>
+        <br/>
+        <br/>
+        You are about to UNINSTALL the UserImportExport extensions package for OTRS.<br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        c.a.p.e. IT ...easy.<br/>
+        <br/>
+    ]]></IntroUninstall>    
+</otrs_package>
